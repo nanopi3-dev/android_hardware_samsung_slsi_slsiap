@@ -7,7 +7,7 @@ LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/../include
 
-LOCAL_C_INCLUDES += $(TOP)/linux/platform/$(TARGET_CPU_VARIANT2)/library/include
+LOCAL_C_INCLUDES += $(TOP)/vendor/nexell/$(TARGET_CPU_VARIANT2)/library/include
 
 LOCAL_SRC_FILES := NXJpegHWEnc.cpp
 

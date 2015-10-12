@@ -21,7 +21,7 @@ endif
 
 NX_HW_TOP := $(TOP)/hardware/samsung_slsi/slsiap
 NX_HW_INCLUDE := $(NX_HW_TOP)/include
-NX_LINUX_TOP := $(TOP)/linux/platform/$(TARGET_CPU_VARIANT2)
+NX_LINUX_TOP := $(TOP)/vendor/nexell/$(TARGET_CPU_VARIANT2)
 NX_LINUX_INCLUDE := $(NX_LINUX_TOP)/library/include
 
 OMX_TOP := $(NX_HW_TOP)/omx
