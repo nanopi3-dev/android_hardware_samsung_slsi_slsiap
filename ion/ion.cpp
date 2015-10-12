@@ -1,3 +1,5 @@
+#define LOG_TAG "nexell-ion"
+
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -10,13 +12,11 @@
 //#include <ion/ion.h>
 #include <ion-private.h>
 
-#define LOG_TAG "nexell-ion"
-
 static int ion_ioctl(int fd, int req, void *arg)
 {
     int ret = ioctl(fd, req, arg);
     if (ret < 0) {
-        ALOGE("ioctl %d failed with code %d: %d\n", req,
+        ALOGE("ioctl %d failed with code %d: %s\n", req,
                 ret, strerror(errno));
     }
     return ret;
