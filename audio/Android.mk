@@ -35,6 +35,10 @@ LOCAL_C_INCLUDES += \
 	external/expat/lib \
 	$(call include-path-for, audio-utils)
 
+ifneq ($(BOARD_USES_CARD_SPDIF),false)
+LOCAL_CFLAGS += -DUSES_CARD_SPDIF=1
+endif
+
 include $(BUILD_SHARED_LIBRARY)
 
 #include $(call all-makefiles-under,$(LOCAL_PATH))

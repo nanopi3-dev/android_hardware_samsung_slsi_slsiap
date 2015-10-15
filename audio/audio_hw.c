@@ -106,6 +106,7 @@ static struct snd_card_dev pcm_in = {
 	},
 };
 
+#ifdef USES_CARD_SPDIF
 static struct snd_card_dev spdif_out = {
 	.name		= "SPDIF OUT",
 	.card		= 1,
@@ -119,6 +120,7 @@ static struct snd_card_dev spdif_out = {
     	.format 		= PCM_FORMAT_S16_LE,
 	},
 };
+#endif
 
 struct audio_device {
     struct audio_hw_device device;
@@ -851,12 +853,15 @@ static int out_set_format(struct audio_stream *stream, audio_format_t format)
 
 static void out_select_sndcard(struct stream_out *out)
 {
-	if(out->device & AUDIO_DEVICE_OUT_AUX_DIGITAL){
+#ifdef USES_CARD_SPDIF
+	if (out->device & AUDIO_DEVICE_OUT_AUX_DIGITAL) {
 		out->card = &spdif_out;
+	} else
+#else
+	{
+	    out->card = &pcm_out;
 	}
-	else{
-		out->card = &pcm_out;
-	}
+#endif
 }
 
 /* Return the set of output devices associated with active streams
@@ -1512,6 +1517,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
 	struct snd_card_dev *card = &pcm_out;
 	struct pcm_config *pcm = &out->config;
 
+#ifdef USES_CARD_SPDIF
 	if ((devices & AUDIO_DEVICE_OUT_AUX_DIGITAL) &&
 		(flags & AUDIO_OUTPUT_FLAG_DIRECT)) {
         pthread_mutex_lock(&adev->lock);
@@ -1519,7 +1525,9 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
 		card = &spdif_out;
         out->pcm_device = PCM_DEVICE;
         type = OUTPUT_HDMI;
-    } else if (flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) {
+    } else
+#endif
+	if (flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) {
 		card = &pcm_out;
         out->pcm_device = PCM_DEVICE_DEEP;
         type = OUTPUT_DEEP_BUF;
