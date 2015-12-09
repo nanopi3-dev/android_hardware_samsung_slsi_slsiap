@@ -58,12 +58,10 @@ LOCAL_C_INCLUDES += system/core/libion/include
 LOCAL_CFLAGS += -DLOLLIPOP
 endif
 
-
 # use scaler zoom
 # LOCAL_CFLAGS += -DUSE_SCALER_ZOOM
 
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
-
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

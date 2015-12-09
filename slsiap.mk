@@ -48,6 +48,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libv4l2-nexell
 
+# Jpeg
+PRODUCT_PACKAGES += \
+	libNX_Jpeghw \
+	libNX_Jpeg
+
+# camera
+PRODUCT_PACKAGES += \
+	camera.slsiap
+
 # omx
 PRODUCT_PACKAGES += \
 	libstagefrighthw \

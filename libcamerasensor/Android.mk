@@ -11,6 +11,7 @@ LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH)/../include
 
 LOCAL_SRC_FILES := \
+	OV5640.cpp \
 	S5K4ECGX.cpp \
 	S5K5CAGX.cpp \
 	SP0838.cpp \
@@ -37,6 +38,7 @@ LOCAL_CFLAGS += -DLOLLIPOP
 endif
 
 LOCAL_SHARED_LIBRARIES := liblog libv4l2-nexell
+
 LOCAL_MODULE := libcamerasensor
 LOCAL_MODULE_TAGS := optional
 
