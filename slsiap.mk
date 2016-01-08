@@ -29,8 +29,10 @@ PRODUCT_PACKAGES += \
 	audio.primary.slsiap
 
 # lights HAL
+ifeq ($(BOARD_USES_PWMLIGHTS),true)
 PRODUCT_PACKAGES += \
 	lights.slsiap
+endif
 
 # power HAL
 PRODUCT_PACKAGES += \
