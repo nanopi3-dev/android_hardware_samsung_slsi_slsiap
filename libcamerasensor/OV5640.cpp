@@ -30,9 +30,9 @@ namespace android {
 const int32_t ResolutionOV5640[] = {
     2592, 1944,
     1600, 1200,
-//  1280,  720,
+    1280,  720,
      800,  600,
-//   640,  480
+     640,  480
 };
 
 // TOP/system/media/camera/include/system/camera_metadata_tags.h
