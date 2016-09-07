@@ -67,6 +67,11 @@ status_t RecordThread::readyToRun()
         return NO_INIT;
     }
 
+    sp<NXStreamThread> previewThread = StreamManager->getStreamThread(STREAM_ID_PREVIEW);
+#ifdef ARCH_S5P4418
+    previewThread->stop(true);
+#endif
+
     int ret = v4l2_set_format(Id, Width, Height, Format);
     if (ret < 0) {
         ALOGE("failed to v4l2_set_format for %d", Id);
@@ -79,7 +84,6 @@ status_t RecordThread::readyToRun()
         return NO_INIT;
     }
 
-    sp<NXStreamThread> previewThread = StreamManager->getStreamThread(STREAM_ID_PREVIEW);
     if (previewThread == NULL || !previewThread->isRunning()) {
         ALOGD("Preview thread is not running... wait");
         usleep(100*1000);
