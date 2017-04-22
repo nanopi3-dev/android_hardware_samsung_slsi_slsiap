@@ -29,7 +29,7 @@ enum {
 
 const int32_t ResolutionGC2035[] = {
     1568, 1176,
-    768, 576,       
+    768, 576,
 };
 
 // TOP/system/media/camera/include/system/camera_metadata_tags.h
@@ -90,7 +90,7 @@ static const int32_t AvailableFpsRangesGC2035[] = {
 
 static const uint32_t ExposureCompensationRangeGC2035[] = {
     // MIN_EXPOSURE, MAX_EXPOSURE
-    -3, 3
+    0, 3
 };
 
 static const uint8_t AvailableAntibandingModesGC2035[] = {

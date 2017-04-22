@@ -20,7 +20,7 @@ enum {
     COLORFX_MAX
 };
 
-#define MIN_EXPOSURE     -3
+#define MIN_EXPOSURE     0
 #define MAX_EXPOSURE     3
 
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))

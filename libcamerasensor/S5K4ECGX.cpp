@@ -68,7 +68,7 @@ static const uint8_t AvailableSceneModesS5K4ECGX[] = {
 };
 
 static const uint32_t ExposureCompensationRangeS5K4ECGX[] = {
-    -3, 3
+    0, 3
 };
 
 static const uint8_t AvailableAntibandingModesS5K4ECGX[] = {
@@ -303,7 +303,7 @@ void S5K4ECGX::setAwbMode(uint8_t awbMode)
     // }
 }
 
-#define MIN_EXPOSURE    -4
+#define MIN_EXPOSURE     0
 #define MAX_EXPOSURE     4
 
 void S5K4ECGX::setExposure(int32_t exposure)

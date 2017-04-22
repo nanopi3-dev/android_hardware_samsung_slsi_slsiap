@@ -24,15 +24,7 @@ LOCAL_C_INCLUDES := \
 LOCAL_CFLAGS = -fvisibility=hidden -Wall -Werror
 LOCAL_SHARED_LIBRARIES := libcrypto liblog libkeystore_binder libsoftkeymaster
 
-ANDROID_VERSION_STR := $(subst ., ,$(PLATFORM_VERSION))
-ANDROID_VERSION_MAJOR := $(firstword $(ANDROID_VERSION_STR))
-ifeq "6" "$(ANDROID_VERSION_MAJOR)"
 LOCAL_CFLAGS += -DLOLLIPOP
-endif
-
-ifeq "5" "$(ANDROID_VERSION_MAJOR)"
-LOCAL_CFLAGS += -DLOLLIPOP
-endif
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk

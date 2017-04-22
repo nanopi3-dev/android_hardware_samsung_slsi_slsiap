@@ -2147,7 +2147,7 @@ void DeInterlaceFrame( NX_VIDDEC_VIDEO_COMP_TYPE *pDecComp, NX_VID_DEC_OUT *pDec
 		{
 			ALOGE("%s: failed to mmap", __func__);
 			close(ion_fd);
-			return -1;
+			return;
 		}
 
 		vstride = ALIGN(handle->height, 16);

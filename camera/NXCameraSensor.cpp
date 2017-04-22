@@ -28,15 +28,15 @@ const uint32_t kAvailableFormats[2] = {
 const uint32_t NXCameraSensor::kMaxRawValue = 4000;
 const uint32_t NXCameraSensor::kBlackLevel = 1000;
 
-const uint64_t kAvailableRawMinDurations[1] = {
+const int64_t kAvailableRawMinDurations[1] = {
     NXCameraSensor::kFrameDurationRange[0],
 };
 
-const uint64_t kAvailableProcessedMinDurations[1] = {
+const int64_t kAvailableProcessedMinDurations[1] = {
     NXCameraSensor::kFrameDurationRange[0],
 };
 
-const uint64_t kAvailableJpegMinDurations[1] = {
+const int64_t kAvailableJpegMinDurations[1] = {
     NXCameraSensor::kFrameDurationRange[0],
 };
 

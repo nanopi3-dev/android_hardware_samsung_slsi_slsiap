@@ -116,11 +116,6 @@ void NXStream::flushBuffer() {
 
 status_t NXStream::findBufferIndex(buffer_handle_t *buffer)
 {
-    if (!Buffers) {
-        ALOGE("stream %d, No Buffers!!!", StreamId);
-        return NO_INIT;
-    }
-
     for (uint32_t i = 0; i < NumBuffers; i++) {
         if (Buffers[i] == *buffer) {
             return i;

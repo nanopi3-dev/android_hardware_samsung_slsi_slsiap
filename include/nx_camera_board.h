@@ -3,7 +3,6 @@
 
 #include <nxp-v4l2.h>
 #include <hardware/camera2.h>
-#include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 
 namespace android {
@@ -33,7 +32,7 @@ public:
         return v4l2_set_format(V4l2ID, width, height, format);
     }
 	virtual bool isInterlace() {
-		return false;	
+		return false;
 	}
 
 protected:

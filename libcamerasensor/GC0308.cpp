@@ -90,7 +90,7 @@ static const int32_t AvailableFpsRangesGC0308[] = {
 
 static const uint32_t ExposureCompensationRangeGC0308[] = {
     // MIN_EXPOSURE, MAX_EXPOSURE
-    -3, 3
+    0, 3
 };
 
 static const uint8_t AvailableAntibandingModesGC0308[] = {

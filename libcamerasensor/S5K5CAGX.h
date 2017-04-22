@@ -26,7 +26,7 @@ enum {
     COLORFX_MAX
 };
 
-#define MIN_EXPOSURE    -4
+#define MIN_EXPOSURE     0
 #define MAX_EXPOSURE     4
 
 enum {

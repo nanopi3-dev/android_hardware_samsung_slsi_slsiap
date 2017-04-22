@@ -73,7 +73,7 @@ int NXCameraHWInterface2::setRequestQueueSrcOps(const camera2_request_queue_src_
         return NO_MEMORY;
     }
     NXCommandThread *cthread = CommandThread.get();
-    cthread->run();
+    cthread->run("cthread");
     return 0;
 }
 
@@ -264,7 +264,7 @@ int NXCameraHWInterface2::setNotifyCallback(camera2_notify_callback cb, void *us
             ALOGE("can't create SensorThread!!!");
             return NO_MEMORY;
         }
-        SensorThread->run();
+        SensorThread->run("SensorThread");
     }
     return 0;
 }

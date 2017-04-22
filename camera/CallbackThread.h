@@ -2,7 +2,6 @@
 #define _CALLBACK_THREAD_H
 
 #include <hardware/camera2.h>
-#include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 #include <utils/Thread.h>
 #include <gralloc_priv.h>
